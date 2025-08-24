@@ -54,7 +54,7 @@ export class PlayerFactory {
             throw new Error('Player configuration not loaded. Call loadConfig() first.');
         }
 
-        const entity = this.world.createEntity();
+        const entity = this.world.createEntity('player');
         const entityId = entity.getId();
 
         // Add position component

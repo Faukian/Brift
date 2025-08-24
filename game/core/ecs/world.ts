@@ -35,6 +35,15 @@ export class World {
         return this.entities.get(entityId);
     }
 
+    public removeEntity(entityId: number): boolean {
+        const entity = this.entities.get(entityId);
+        if (entity) {
+            this.entities.delete(entityId);
+            return true;
+        }
+        return false;
+    }
+
     public getEntitiesWithComponents(componentTypes: string[]): Entity[] {
         const result: Entity[] = [];
         
@@ -46,6 +55,14 @@ export class World {
         }
         
         return result;
+    }
+
+    public getAllEntities(): Entity[] {
+        return Array.from(this.entities.values()).filter(entity => entity.isEntityActive());
+    }
+
+    public getEntitiesByType(type: string): Entity[] {
+        return this.getAllEntities().filter(entity => entity.getType() === type);
     }
 
     public addSystem(system: System): void {
@@ -76,5 +93,9 @@ export class World {
 
     public getSystemCount(): number {
         return this.systems.length;
+    }
+
+    public getSystems(): System[] {
+        return [...this.systems];
     }
 }

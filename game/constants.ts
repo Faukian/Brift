@@ -13,6 +13,21 @@ export const GRID_HEIGHT = Math.floor(CANVAS_HEIGHT / TILE_SIZE);
 export const FPS = 60;
 export const TARGET_FRAME_TIME = 1000 / FPS;
 
+// Debug settings
+export const DEBUG_MODE = true; // Toggle debug features
+export const SHOW_HITBOXES = true; // Show entity hitboxes
+export const SHOW_FPS = true; // Show FPS counter
+export const SHOW_ENTITY_COUNT = true; // Show entity count
+export const SHOW_PERFORMANCE = true; // Show performance metrics
+
+// Debug controls
+export const DEBUG_TOGGLE_KEY = 'F1'; // Key to toggle debug mode
+export const DEBUG_CANVAS_ID = 'debug-canvas'; // ID of debug canvas overlay
+
+// Performance thresholds
+export const PERFORMANCE_WARNING_FPS = 30; // FPS threshold for warnings
+export const PERFORMANCE_CRITICAL_FPS = 15; // FPS threshold for critical warnings
+
 // Entity types
 export enum EntityType {
     PLAYER = 'player',

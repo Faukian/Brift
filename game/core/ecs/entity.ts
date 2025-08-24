@@ -7,11 +7,13 @@ import { Component } from './component.js';
 
 export class Entity {
     private id: number;
+    private type: string;
     private components: Map<string, Component>;
     private isActive: boolean;
 
-    constructor(id: number) {
+    constructor(id: number, type: string = 'entity') {
         this.id = id;
+        this.type = type;
         this.components = new Map();
         this.isActive = true;
     }
@@ -51,5 +53,9 @@ export class Entity {
     public destroy(): void {
         this.isActive = false;
         this.components.clear();
+    }
+
+    public getType(): string {
+        return this.type;
     }
 }

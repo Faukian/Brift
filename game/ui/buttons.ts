@@ -40,18 +40,18 @@ export class Button {
             backgroundColor = this.getNormalColor(style);
         }
 
-        // Draw button background
+        // Draw button background with rounded corners
         ctx.fillStyle = backgroundColor;
-        ctx.fillRect(x, y, width, height);
+        this.drawRoundedRect(ctx, x, y, width, height, 8);
 
-        // Draw button border
+        // Draw button border with rounded corners
         ctx.strokeStyle = enabled ? '#ffffff' : '#999999';
         ctx.lineWidth = 2;
-        ctx.strokeRect(x, y, width, height);
+        this.strokeRoundedRect(ctx, x, y, width, height, 8);
 
         // Draw button text
         ctx.fillStyle = textColor;
-        ctx.font = '16px Arial';
+        ctx.font = 'bold 20px Arial';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(text, x + width / 2, y + height / 2);
@@ -96,30 +96,65 @@ export class Button {
         return false;
     }
 
+    public setPosition(x: number, y: number): void {
+        this.config.x = x;
+        this.config.y = y;
+    }
+
     private getNormalColor(style: string): string {
         switch (style) {
-            case 'primary': return '#4CAF50';
-            case 'secondary': return '#2196F3';
-            case 'danger': return '#f44336';
-            default: return '#4CAF50';
+            case 'primary': return '#ff6b6b';  // Bright red
+            case 'secondary': return '#74b9ff'; // Bright blue
+            case 'danger': return '#fd79a8';   // Bright pink
+            default: return '#ff6b6b';
         }
     }
 
     private getHoverColor(style: string): string {
         switch (style) {
-            case 'primary': return '#45a049';
-            case 'secondary': return '#1976D2';
-            case 'danger': return '#da190b';
-            default: return '#45a049';
+            case 'primary': return '#ff5252';  // Darker red
+            case 'secondary': return '#0984e3'; // Darker blue
+            case 'danger': return '#e84393';   // Darker pink
+            default: return '#ff5252';
         }
     }
 
     private getPressedColor(style: string): string {
         switch (style) {
-            case 'primary': return '#3d8b40';
-            case 'secondary': return '#1565C0';
-            case 'danger': return '#c62828';
-            default: return '#3d8b40';
+            case 'primary': return '#d32f2f';  // Even darker red
+            case 'secondary': return '#1976d2'; // Even darker blue
+            case 'danger': return '#c2185b';   // Even darker pink
+            default: return '#d32f2f';
         }
+    }
+
+    private drawRoundedRect(ctx: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, radius: number): void {
+        ctx.beginPath();
+        ctx.moveTo(x + radius, y);
+        ctx.lineTo(x + width - radius, y);
+        ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+        ctx.lineTo(x + width, y + height - radius);
+        ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+        ctx.lineTo(x + radius, y + height);
+        ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+        ctx.lineTo(x, y + radius);
+        ctx.quadraticCurveTo(x, y, x + radius, y);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    private strokeRoundedRect(ctx: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, radius: number): void {
+        ctx.beginPath();
+        ctx.moveTo(x + radius, y);
+        ctx.lineTo(x + width - radius, y);
+        ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+        ctx.lineTo(x + width, y + height - radius);
+        ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+        ctx.lineTo(x + radius, y + height);
+        ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+        ctx.lineTo(x, y + radius);
+        ctx.quadraticCurveTo(x, y, x + radius, y);
+        ctx.closePath();
+        ctx.stroke();
     }
 }

@@ -1,95 +1,146 @@
-# 🎮 Modular Brift - ECS Demo
+# Modular Brift - Tower Defense Game
 
-A working prototype demonstrating the Entity-Component-System (ECS) architecture for a tower defense game.
+A modular tower defense game built with TypeScript and Entity-Component-System (ECS) architecture, featuring a Brotato-style gameplay with tower defense mechanics.
 
-## 🚀 Quick Start
+## 🎮 Game Features
 
-### Option 1: Run Demo Directly (Recommended)
-Simply open `game/demo.html` in your web browser. This file contains a complete, self-contained demo that works without any build tools.
+- **ECS Architecture**: Clean, modular, and scalable game engine
+- **Data-Driven Design**: All game entities configured via JSON files
+- **Responsive Canvas**: Automatically scales to fit any screen size
+- **Debug Mode**: Built-in performance monitoring and debugging tools
+- **Modular Systems**: Easy to extend with new game mechanics
 
-### Option 2: Run with Development Server
-If you have Node.js installed:
-```bash
-npm install
-npm run dev
-```
-
-## 🎯 What You'll See
-
-- **Canvas**: A black game canvas with a blue square (the player)
-- **Controls**: Use **Arrow Keys** or **WASD** to move the square around
-- **ECS Working**: The demo proves the ECS architecture is functioning correctly
-
-## 🏗️ Architecture Overview
-
-### Core ECS Components
-- **Entity**: Game objects with unique IDs
-- **Component**: Data containers (Position, Velocity, Sprite)
-- **System**: Logic processors (Input, Physics, Render)
-- **World**: Manages all entities, components, and systems
-
-### Demo Systems
-1. **InputSystem**: Handles keyboard input and sets velocity
-2. **PhysicsSystem**: Updates positions based on velocity
-3. **RenderSystem**: Draws entities on the canvas
-
-### Demo Components
-1. **Position**: `{ x: number, y: number }`
-2. **Velocity**: `{ dx: number, dy: number }`
-3. **Sprite**: `{ color: string, width: number, height: number }`
-
-## 🔧 Technical Details
-
-- **Language**: TypeScript (compiled to JavaScript in demo.html)
-- **Rendering**: HTML5 Canvas 2D
-- **Game Loop**: requestAnimationFrame with delta time
-- **Input**: Keyboard event handling
-- **Architecture**: Pure ECS with no external dependencies
-
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
 game/
-├── demo.html              # 🎯 WORKING DEMO (open this!)
-├── main.ts               # TypeScript main file
-├── core/ecs/            # ECS core implementation
-├── components/          # Game components
-├── systems/             # Game systems
-├── entities/            # Entity factories
-└── index.html           # Main HTML file
+├── core/           # Core engine systems
+│   ├── ecs/       # Entity-Component-System implementation
+│   ├── input.ts   # Input management
+│   ├── camera.ts  # Camera system
+│   └── utils.ts   # Utility functions
+├── systems/        # Game logic systems
+│   ├── render.ts  # Rendering system
+│   ├── physics.ts # Physics and movement
+│   ├── input.ts   # Input handling
+│   ├── ai.ts      # AI behavior (stub)
+│   ├── combat.ts  # Combat system (stub)
+│   ├── tower.ts   # Tower logic (stub)
+│   ├── building.ts # Building system (stub)
+│   └── economy.ts # Economy system (stub)
+├── components/     # Entity components
+├── entities/       # Entity factories
+├── scenes/         # Game scenes and state management
+├── ui/            # User interface components
+├── data/          # JSON configuration files
+└── assets/        # Game assets (sprites, sounds, fonts)
 ```
 
-## 🎮 Controls
+## 🚀 Getting Started
 
-- **Arrow Keys** or **WASD**: Move the blue square
-- **Smooth Movement**: Physics system applies velocity over time
-- **Real-time Rendering**: 60fps game loop with delta time
+### Prerequisites
+- Node.js 16+ 
+- npm or yarn
 
-## 🚀 Next Steps
+### Installation
+```bash
+npm install
+```
 
-This demo proves the ECS foundation works. You can now:
+### Development
+```bash
+npm run dev
+```
 
-1. **Add More Entities**: Enemies, towers, projectiles
-2. **Expand Components**: Health, damage, AI behavior
-3. **Add Systems**: Combat, AI, economy
-4. **Build Game Logic**: Wave spawning, tower placement
+### Build
+```bash
+npm run build
+```
 
-## 🔍 Code Quality
+## 🎯 Controls
 
-- **Clean Architecture**: Separation of concerns
-- **Type Safety**: Full TypeScript implementation
-- **Modular Design**: Easy to extend and modify
-- **Performance**: Efficient entity queries and updates
+### Player Movement
+- **WASD** or **Arrow Keys**: Move player character
+- **Mouse**: Look around (future feature)
 
-## 📝 Notes
+### Debug Controls
+- **F1**: Toggle debug mode
+- **F2**: Log game state to console
+- **F3**: Reset performance counters
 
-- The demo.html file is self-contained for easy testing
-- All TypeScript files are properly structured for development
-- The ECS core is production-ready and scalable
-- No external build tools required for the demo
+## 🔧 Development
+
+### Adding New Entities
+1. Create component classes in `components/`
+2. Create entity factory in `entities/`
+3. Add JSON configuration in `data/`
+4. Create systems in `systems/` if needed
+
+### Adding New Systems
+1. Extend the `System` base class
+2. Implement `update()` and optionally `render()` methods
+3. Register system in `main.ts`
+
+### JSON Configuration
+All entities use JSON files for configuration:
+- `player.json` - Player stats and appearance
+- `enemies.json` - Enemy types and properties
+- `towers.json` - Tower types and stats
+- `weapons.json` - Weapon configurations
+- `upgrades.json` - Upgrade paths
+- `levels.json` - Level configurations
+
+## 📊 Debug Features
+
+- **FPS Counter**: Real-time frame rate monitoring
+- **Entity Count**: Shows active entities
+- **Performance Metrics**: Frame time and status
+- **Hitbox Visualization**: Red dashed rectangles around entities
+- **Performance Warnings**: Color-coded status indicators
+
+## 🎨 Architecture Highlights
+
+### ECS Core
+- **Entity**: Container for components
+- **Component**: Data-only objects
+- **System**: Logic that operates on components
+- **World**: Manages all entities and systems
+
+### Data Flow
+1. JSON files define entity properties
+2. Entity factories create entities with components
+3. Systems process components each frame
+4. Render system draws entities to canvas
+
+### Performance
+- Efficient component queries
+- Frame time tracking
+- Automatic performance warnings
+- Responsive canvas scaling
+
+## 🚧 Future Features
+
+- Enemy AI and pathfinding
+- Tower targeting and combat
+- Resource management
+- Wave system
+- Upgrade trees
+- Sound effects and music
+- Particle effects
+- Save/load system
+
+## 📝 License
+
+MIT License - see LICENSE file for details
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
 ---
 
-**🎯 Goal Achieved**: Working ECS prototype with player movement!
-**🔧 Status**: Ready for game development
-**📚 Learning**: ECS architecture fundamentals demonstrated
+**Built with TypeScript, ECS Architecture, and ❤️**

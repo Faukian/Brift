@@ -191,3 +191,109 @@ export class DataUtils {
         }
     }
 }
+
+export class DebugUtils {
+    private static frameCount: number = 0;
+    private static lastFpsTime: number = 0;
+    private static fps: number = 0;
+    private static frameTimes: number[] = [];
+    private static maxFrameTimeSamples = 60;
+
+    /**
+     * Update FPS calculation
+     */
+    public static updateFPS(currentTime: number): void {
+        this.frameCount++;
+        
+        if (currentTime - this.lastFpsTime >= 1000) {
+            this.fps = this.frameCount;
+            this.frameCount = 0;
+            this.lastFpsTime = currentTime;
+        }
+    }
+
+    /**
+     * Get current FPS
+     */
+    public static getFPS(): number {
+        return this.fps;
+    }
+
+    /**
+     * Track frame time for performance monitoring
+     */
+    public static trackFrameTime(frameTime: number): void {
+        this.frameTimes.push(frameTime);
+        if (this.frameTimes.length > this.maxFrameTimeSamples) {
+            this.frameTimes.shift();
+        }
+    }
+
+    /**
+     * Get average frame time
+     */
+    public static getAverageFrameTime(): number {
+        if (this.frameTimes.length === 0) return 0;
+        const sum = this.frameTimes.reduce((a, b) => a + b, 0);
+        return sum / this.frameTimes.length;
+    }
+
+    /**
+     * Get performance status
+     */
+    public static getPerformanceStatus(): 'good' | 'warning' | 'critical' {
+        const avgFps = 1000 / this.getAverageFrameTime();
+        if (avgFps >= 50) return 'good';
+        if (avgFps >= 30) return 'warning';
+        return 'critical';
+    }
+
+    /**
+     * Reset debug counters
+     */
+    public static reset(): void {
+        this.frameCount = 0;
+        this.lastFpsTime = 0;
+        this.fps = 0;
+        this.frameTimes = [];
+    }
+}
+
+export class CanvasUtils {
+    /**
+     * Make canvas responsive to window size
+     */
+    public static makeResponsive(canvas: HTMLCanvasElement, targetWidth: number, targetHeight: number): void {
+        const resizeCanvas = () => {
+            const container = canvas.parentElement;
+            if (!container) return;
+
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
+            
+            // Calculate scale to fit container while maintaining aspect ratio
+            const scaleX = containerWidth / targetWidth;
+            const scaleY = containerHeight / targetHeight;
+            const scale = Math.min(scaleX, scaleY);
+            
+            canvas.style.width = `${targetWidth * scale}px`;
+            canvas.style.height = `${targetHeight * scale}px`;
+            canvas.style.display = 'block';
+            canvas.style.margin = 'auto';
+        };
+
+        // Initial resize
+        resizeCanvas();
+        
+        // Resize on window resize
+        window.addEventListener('resize', resizeCanvas);
+    }
+
+    /**
+     * Get canvas scale factor
+     */
+    public static getCanvasScale(canvas: HTMLCanvasElement): number {
+        const rect = canvas.getBoundingClientRect();
+        return rect.width / canvas.width;
+    }
+}
