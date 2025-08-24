@@ -1,0 +1,18 @@
+{
+  "name": "modular-brift",
+  "version": "1.0.0",
+  "description": "A modular tower defense game built with TypeScript and ECS architecture",
+  "main": "game/main.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vite": "^4.0.0"
+  },
+  "keywords": ["game", "tower-defense", "typescript", "ecs"],
+  "author": "Your Name",
+  "license": "MIT"
+}

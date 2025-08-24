@@ -1,0 +1,114 @@
+{
+  "towers": [
+    {
+      "id": "basic_tower",
+      "name": "Basic Tower",
+      "cost": 100,
+      "damage": 25,
+      "range": 150,
+      "attackSpeed": 1.0,
+      "projectileSpeed": 200,
+      "sprite": "tower_basic",
+      "scale": 1.0,
+      "upgrades": [
+        {
+          "id": "basic_tower_damage",
+          "name": "Damage Upgrade",
+          "cost": 75,
+          "effect": "damage",
+          "value": 15
+        },
+        {
+          "id": "basic_tower_range",
+          "name": "Range Upgrade",
+          "cost": 50,
+          "effect": "range",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "id": "sniper_tower",
+      "name": "Sniper Tower",
+      "cost": 200,
+      "damage": 75,
+      "range": 300,
+      "attackSpeed": 0.5,
+      "projectileSpeed": 400,
+      "sprite": "tower_sniper",
+      "scale": 1.0,
+      "upgrades": [
+        {
+          "id": "sniper_tower_damage",
+          "name": "Damage Upgrade",
+          "cost": 150,
+          "effect": "damage",
+          "value": 25
+        },
+        {
+          "id": "sniper_tower_speed",
+          "name": "Speed Upgrade",
+          "cost": 100,
+          "effect": "attackSpeed",
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "rapid_tower",
+      "name": "Rapid Tower",
+      "cost": 150,
+      "damage": 15,
+      "range": 120,
+      "attackSpeed": 3.0,
+      "projectileSpeed": 150,
+      "sprite": "tower_rapid",
+      "scale": 1.0,
+      "upgrades": [
+        {
+          "id": "rapid_tower_speed",
+          "name": "Speed Upgrade",
+          "cost": 100,
+          "effect": "attackSpeed",
+          "value": 0.5
+        },
+        {
+          "id": "rapid_tower_damage",
+          "name": "Damage Upgrade",
+          "cost": 75,
+          "effect": "damage",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "area_tower",
+      "name": "Area Tower",
+      "cost": 300,
+      "damage": 40,
+      "range": 200,
+      "attackSpeed": 0.8,
+      "projectileSpeed": 100,
+      "sprite": "tower_area",
+      "scale": 1.2,
+      "areaDamage": true,
+      "areaRadius": 80,
+      "upgrades": [
+        {
+          "id": "area_tower_radius",
+          "name": "Radius Upgrade",
+          "cost": 200,
+          "effect": "areaRadius",
+          "value": 20
+        },
+        {
+          "id": "area_tower_damage",
+          "name": "Damage Upgrade",
+          "cost": 150,
+          "effect": "damage",
+          "value": 15
+        }
+      ]
+    }
+  ]
+}

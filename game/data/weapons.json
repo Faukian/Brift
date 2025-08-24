@@ -1,0 +1,90 @@
+{
+  "weapons": [
+    {
+      "id": "basic_weapon",
+      "name": "Basic Weapon",
+      "damage": 20,
+      "range": 100,
+      "attackSpeed": 1.5,
+      "projectileSpeed": 250,
+      "cost": 0,
+      "sprite": "weapon_basic",
+      "scale": 1.0,
+      "type": "ranged",
+      "upgrades": [
+        {
+          "id": "basic_weapon_damage",
+          "name": "Damage Upgrade",
+          "cost": 100,
+          "effect": "damage",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "shotgun",
+      "name": "Shotgun",
+      "damage": 15,
+      "range": 80,
+      "attackSpeed": 0.8,
+      "projectileSpeed": 200,
+      "cost": 200,
+      "sprite": "weapon_shotgun",
+      "scale": 1.0,
+      "type": "ranged",
+      "spread": 30,
+      "pelletCount": 5,
+      "upgrades": [
+        {
+          "id": "shotgun_pellets",
+          "name": "Pellet Upgrade",
+          "cost": 150,
+          "effect": "pelletCount",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "laser_rifle",
+      "name": "Laser Rifle",
+      "damage": 35,
+      "range": 200,
+      "attackSpeed": 2.0,
+      "projectileSpeed": 500,
+      "cost": 400,
+      "sprite": "weapon_laser",
+      "scale": 1.0,
+      "type": "ranged",
+      "piercing": true,
+      "upgrades": [
+        {
+          "id": "laser_piercing",
+          "name": "Piercing Upgrade",
+          "cost": 300,
+          "effect": "piercing",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "melee_weapon",
+      "name": "Melee Weapon",
+      "damage": 40,
+      "range": 50,
+      "attackSpeed": 1.0,
+      "cost": 150,
+      "sprite": "weapon_melee",
+      "scale": 1.0,
+      "type": "melee",
+      "upgrades": [
+        {
+          "id": "melee_damage",
+          "name": "Damage Upgrade",
+          "cost": 100,
+          "effect": "damage",
+          "value": 15
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "enemies": [
+    {
+      "id": "basic_enemy",
+      "name": "Basic Enemy",
+      "health": 100,
+      "speed": 50,
+      "damage": 10,
+      "reward": 25,
+      "sprite": "enemy_basic",
+      "scale": 1.0,
+      "animations": {
+        "walk": "enemy_walk",
+        "attack": "enemy_attack",
+        "death": "enemy_death"
+      }
+    },
+    {
+      "id": "fast_enemy",
+      "name": "Fast Enemy",
+      "health": 75,
+      "speed": 80,
+      "damage": 8,
+      "reward": 30,
+      "sprite": "enemy_fast",
+      "scale": 0.8,
+      "animations": {
+        "walk": "enemy_fast_walk",
+        "attack": "enemy_fast_attack",
+        "death": "enemy_fast_death"
+      }
+    },
+    {
+      "id": "tank_enemy",
+      "name": "Tank Enemy",
+      "health": 200,
+      "speed": 30,
+      "damage": 15,
+      "reward": 50,
+      "sprite": "enemy_tank",
+      "scale": 1.3,
+      "animations": {
+        "walk": "enemy_tank_walk",
+        "attack": "enemy_tank_attack",
+        "death": "enemy_tank_death"
+      }
+    },
+    {
+      "id": "boss_enemy",
+      "name": "Boss Enemy",
+      "health": 500,
+      "speed": 40,
+      "damage": 25,
+      "reward": 200,
+      "sprite": "enemy_boss",
+      "scale": 2.0,
+      "animations": {
+        "walk": "enemy_boss_walk",
+        "attack": "enemy_boss_attack",
+        "death": "enemy_boss_death"
+      }
+    }
+  ]
+}

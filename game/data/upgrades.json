@@ -1,0 +1,92 @@
+{
+  "upgrades": [
+    {
+      "id": "player_health",
+      "name": "Health Boost",
+      "description": "Increase player maximum health",
+      "cost": 100,
+      "type": "player",
+      "effect": "maxHealth",
+      "value": 25,
+      "maxLevel": 5,
+      "costMultiplier": 1.5
+    },
+    {
+      "id": "player_speed",
+      "name": "Speed Boost",
+      "description": "Increase player movement speed",
+      "cost": 150,
+      "type": "player",
+      "effect": "movementSpeed",
+      "value": 10,
+      "maxLevel": 3,
+      "costMultiplier": 2.0
+    },
+    {
+      "id": "resource_generation",
+      "name": "Resource Generation",
+      "description": "Increase resource generation rate",
+      "cost": 200,
+      "type": "global",
+      "effect": "resourceRate",
+      "value": 0.5,
+      "maxLevel": 4,
+      "costMultiplier": 1.8
+    },
+    {
+      "id": "tower_discount",
+      "name": "Tower Discount",
+      "description": "Reduce tower construction costs",
+      "cost": 300,
+      "type": "global",
+      "effect": "towerCostReduction",
+      "value": 0.1,
+      "maxLevel": 3,
+      "costMultiplier": 2.5
+    },
+    {
+      "id": "experience_boost",
+      "name": "Experience Boost",
+      "description": "Increase experience gained from enemies",
+      "cost": 250,
+      "type": "global",
+      "effect": "experienceMultiplier",
+      "value": 0.2,
+      "maxLevel": 3,
+      "costMultiplier": 2.0
+    },
+    {
+      "id": "weapon_damage",
+      "name": "Weapon Damage",
+      "description": "Increase player weapon damage",
+      "cost": 175,
+      "type": "player",
+      "effect": "weaponDamage",
+      "value": 15,
+      "maxLevel": 4,
+      "costMultiplier": 1.6
+    },
+    {
+      "id": "critical_chance",
+      "name": "Critical Chance",
+      "description": "Increase chance of critical hits",
+      "cost": 400,
+      "type": "player",
+      "effect": "criticalChance",
+      "value": 0.05,
+      "maxLevel": 3,
+      "costMultiplier": 3.0
+    },
+    {
+      "id": "wave_reward",
+      "name": "Wave Reward",
+      "description": "Increase resources gained from completing waves",
+      "cost": 350,
+      "type": "global",
+      "effect": "waveRewardMultiplier",
+      "value": 0.25,
+      "maxLevel": 3,
+      "costMultiplier": 2.2
+    }
+  ]
+}

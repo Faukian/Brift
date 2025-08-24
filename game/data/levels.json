@@ -1,0 +1,139 @@
+{
+  "levels": [
+    {
+      "id": "level_1",
+      "name": "Tutorial",
+      "description": "Learn the basics of tower defense",
+      "waves": [
+        {
+          "waveNumber": 1,
+          "enemies": [
+            { "type": "basic_enemy", "count": 5, "spawnDelay": 2.0 }
+          ],
+          "reward": 100,
+          "timeLimit": 60
+        },
+        {
+          "waveNumber": 2,
+          "enemies": [
+            { "type": "basic_enemy", "count": 8, "spawnDelay": 1.5 }
+          ],
+          "reward": 150,
+          "timeLimit": 90
+        }
+      ],
+      "startingResources": 200,
+      "maxPlayerHealth": 100,
+      "background": "level_1_bg",
+      "music": "level_1_music"
+    },
+    {
+      "id": "level_2",
+      "name": "First Challenge",
+      "description": "Face your first real challenge",
+      "waves": [
+        {
+          "waveNumber": 1,
+          "enemies": [
+            { "type": "basic_enemy", "count": 10, "spawnDelay": 1.5 }
+          ],
+          "reward": 200,
+          "timeLimit": 120
+        },
+        {
+          "waveNumber": 2,
+          "enemies": [
+            { "type": "basic_enemy", "count": 8, "spawnDelay": 1.2 },
+            { "type": "fast_enemy", "count": 3, "spawnDelay": 2.0 }
+          ],
+          "reward": 250,
+          "timeLimit": 150
+        },
+        {
+          "waveNumber": 3,
+          "enemies": [
+            { "type": "basic_enemy", "count": 12, "spawnDelay": 1.0 },
+            { "type": "fast_enemy", "count": 6, "spawnDelay": 1.5 }
+          ],
+          "reward": 300,
+          "timeLimit": 180
+        }
+      ],
+      "startingResources": 300,
+      "maxPlayerHealth": 100,
+      "background": "level_2_bg",
+      "music": "level_2_music"
+    },
+    {
+      "id": "level_3",
+      "name": "Tank Invasion",
+      "description": "Prepare for heavy enemies",
+      "waves": [
+        {
+          "waveNumber": 1,
+          "enemies": [
+            { "type": "basic_enemy", "count": 15, "spawnDelay": 1.0 }
+          ],
+          "reward": 300,
+          "timeLimit": 150
+        },
+        {
+          "waveNumber": 2,
+          "enemies": [
+            { "type": "fast_enemy", "count": 10, "spawnDelay": 1.2 }
+          ],
+          "reward": 350,
+          "timeLimit": 180
+        },
+        {
+          "waveNumber": 3,
+          "enemies": [
+            { "type": "tank_enemy", "count": 3, "spawnDelay": 3.0 }
+          ],
+          "reward": 400,
+          "timeLimit": 240
+        }
+      ],
+      "startingResources": 400,
+      "maxPlayerHealth": 125,
+      "background": "level_3_bg",
+      "music": "level_3_music"
+    },
+    {
+      "id": "level_4",
+      "name": "Boss Battle",
+      "description": "Face the ultimate challenge",
+      "waves": [
+        {
+          "waveNumber": 1,
+          "enemies": [
+            { "type": "basic_enemy", "count": 20, "spawnDelay": 0.8 }
+          ],
+          "reward": 400,
+          "timeLimit": 200
+        },
+        {
+          "waveNumber": 2,
+          "enemies": [
+            { "type": "fast_enemy", "count": 15, "spawnDelay": 1.0 },
+            { "type": "tank_enemy", "count": 5, "spawnDelay": 2.5 }
+          ],
+          "reward": 500,
+          "timeLimit": 300
+        },
+        {
+          "waveNumber": 3,
+          "enemies": [
+            { "type": "boss_enemy", "count": 1, "spawnDelay": 5.0 }
+          ],
+          "reward": 1000,
+          "timeLimit": 600
+        }
+      ],
+      "startingResources": 500,
+      "maxPlayerHealth": 150,
+      "background": "level_4_bg",
+      "music": "level_4_music"
+    }
+  ]
+}
